@@ -18,7 +18,8 @@
     <%= f.input :state,
                  required: true%>
     <%= f.input :country,
-                 required: true%>
+                 required: true,
+                 input_html: { class: 'select2' }%>
     <%= f.input :email,
                 required: true,
                 autofocus: true,

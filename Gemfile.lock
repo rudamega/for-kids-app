@@ -248,7 +248,7 @@ DEPENDENCIES
   bootsnap (>= 1.4.2)
   byebug
   capybara (>= 2.15)
-  country_select
+  country_select (~> 4.0)
   devise
   dotenv-rails
   font-awesome-sass
