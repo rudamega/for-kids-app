@@ -5,6 +5,7 @@
       <%= t.input :name%>
       <%= t.input :description%>
       <%= t.input :price, label: "USD-Number only", placeholder: "Ex: 50.00"%>
+      <%= t.input :photo, as: :file %>
       <%= t.submit%>
     <% end %>
     <%= link_to 'Back', items_path, class: "btn btn-outline-secondary" %>
