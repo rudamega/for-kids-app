@@ -1,0 +1,7 @@
+
+<div class="body-geral">
+  <%@items.each do |item| %>
+  <%= link_to item.name, item_path(item), class:'list-group-item list-group-item-action'%>
+  <% end %>
+</div>
+<%= link_to "Create New items", new_item_path %>
