@@ -1,11 +1,24 @@
-<div class="show-container">
-  <div class="show-container-inside">
-    <h1><%= @item.name %></h1>
-    <% if @item.photo.attached? %>
-    <%= cl_image_tag @item.photo.key, height: 300, width: 400, crop: :fill %>
+<h1>PEDIDO - PRE CONFIRMADO</h1>
+<table class="table">
+  <thead>
+    <tr>
+      <th>QTY</th>
+      <th>Item</th>
+      <th>Price</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+  <tbody>
+      <tr>
+        <td><%= 1 %></td>
+        <td><%= @item.name %></td>
+        <td><%= @item.price %></td>
+      </tr>
+  </tbody>
+</table>
+
+
+<%= simple_form_for [@item, @order] do |t| %>
+      <%= t.submit 'CONFIRM YOUR ORDER', class: "btn btn-outline-secondary"%>
     <% end %>
-  </div>
-</div>
-<%= link_to 'Back', items_path, class: "btn btn-outline-secondary" %>
-<%= link_to 'remove', item_path,method: :delete, class: "btn btn-outline-secondary" %>
-<%= link_to 'Buy', new_order_path, class: "btn btn-outline-secondary" %>
+    <%= link_to 'Back to items', items_path, class: "btn btn-outline-secondary" %>

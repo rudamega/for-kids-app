@@ -4,23 +4,22 @@ class OrdersController < ApplicationController
   end
 
   def new
+    @item = Item.find(params[:item_id])
     @order = Order.new
   end
 
   def create
-    @order = Order.new(order_params)
+    @item = Item.find(params[:item_id])
+    @order = Order.new
+    @order.item = @item
+    @order.user = current_user
+    @order.status = "SOLD"
     @order.save
-    redirect_to
+    redirect_to item_path(@item)
   end
 
   def show
     @order=Order.find(params[:id])
   end
 
-
-private
-def order_params
-  params.require(:order).permit(:status, :user_id, :item_id)
-end
-  
 end
