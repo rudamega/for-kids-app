@@ -1,7 +1,29 @@
 
-<div class="body-geral">
+<div class="show-container">
   <%@items.each do |item| %>
-  <%= link_to item.name, item_path(item), class:'list-group-item list-group-item-action'%>
+  <div class="card-trip">
+    <% if item.photo.attached? %>
+      <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path item.photo.key%>')">
+        Cool article
+      </div>
+    <%else%>
+      <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg" />
+    <% end %>
+
+    <div class="card-trip-infos">
+      <div>
+        <%= link_to item.name,item_path(item) %>
+        <p><%= item.description %></p>
+      </div>
+      <h2 class="card-trip-pricing">RS:<%= item.price %> </h2>
+      <% if item.user.photo.attached? %>
+          <%= cl_image_tag item.user.photo.key, class: "card-trip-user avatar-bordered", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+      <% else%>
+          <%= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier", class: "card-trip-user avatar-bordered", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+      <% end %>
+    </div>
+  </div>
+
   <% end %>
 </div>
 <%= link_to "Create New items", new_item_path %>
