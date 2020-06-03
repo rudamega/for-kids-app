@@ -7,7 +7,8 @@
 
 .card-category {
   height: 200px;
-  background-size: cover;
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
 }
 
 .card-category-home {
@@ -26,8 +27,10 @@
 }
 .card-trip > img {
   height: 200px;
-  object-fit: cover;
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
   margin: 1px;
+
 }
 
 .card-trip h2 {
@@ -60,7 +63,7 @@
 .cards {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-  grid-gap: 16px;
+  grid-gap: 8px;
 }
 
 // Smallest device

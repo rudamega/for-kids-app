@@ -1,4 +1,4 @@
-<div class="d-flex flex-wrap justify-content-around">
+<div class="cards">
   <%@items.each do |item| %>
   <div class="card-trip">
     <% if item.photo.attached? %>
@@ -6,7 +6,9 @@
       Cool article
     </div>
     <%else%>
-    <img src="https://images.unsplash.com/photo-1502086223501-7ea6ecd79368?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1446&q=80" />
+    <div class="card-trip">
+      <img src="https://images.unsplash.com/photo-1502086223501-7ea6ecd79368?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1446&q=80" />
+    </div>
     <% end %>
 
     <div class="card-trip-infos">
