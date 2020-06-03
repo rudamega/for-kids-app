@@ -15,7 +15,7 @@ class OrdersController < ApplicationController
     @order.user = current_user
     @order.status = "SOLD"
     @order.save
-    redirect_to item_path(@item)
+    redirect_to orders_path
   end
 
   def show

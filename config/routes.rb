@@ -4,5 +4,6 @@ Rails.application.routes.draw do
   resources :items do
     resources :orders, only: [:create, :new]
   end
+  resources :orders, only: [:index]
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end
