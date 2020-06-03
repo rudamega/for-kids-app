@@ -8,11 +8,3 @@
 </div>
 <%= link_to 'Back', items_path, class: "btn btn-outline-secondary" %>
 <%= link_to 'remove', item_path,method: :delete, class: "btn btn-outline-secondary" %>
-
-
-
-<% if current_user.photo.attached? %>
-          <%= cl_image_tag item.user.photo.key, class: "card-trip-user avatar-bordered", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
-      <% else%>
-          <%= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier", class: "card-trip-user avatar-bordered", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
-      <% end %>
