@@ -4,7 +4,6 @@
   <div class="card-trip">
     <% if item.photo.attached? %>
     <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path item.photo.key%>')">
-      Cool article
     </div>
     <%else%>
     <div class="card-trip">
@@ -14,7 +13,7 @@
 
     <div class="card-trip-infos">
       <div>
-        <%= link_to item.name,item_path(item) %>
+        <%=link_to item.name,item_path(item) %>
         <p><%= item.description %></p>
       </div>
       <h2 class="card-trip-pricing">RS:<%= item.price %> </h2>
@@ -28,4 +27,3 @@
   <% end %>
   <% end %>
 </div>
-<%= link_to "Create New items", new_item_path %>

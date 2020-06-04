@@ -9,7 +9,7 @@ Rails.application.routes.draw do
   get 'my_orders', to: 'orders#my_orders'
 
   get 'my_items', to: 'items#my_items'
-  
+
   resources :user, only: [] do
     get 'user_items', to: 'items#user_items'
   end
