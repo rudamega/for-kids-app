@@ -7,6 +7,7 @@ class OrdersController < ApplicationController
     @order = Order.where(user: current_user)
   end
 
+
   def new
     @item = Item.find(params[:item_id])
     @order = Order.new
