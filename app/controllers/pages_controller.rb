@@ -3,4 +3,8 @@ class PagesController < ApplicationController
   def home
 
   end
+
+  def index
+    @user = current_user
+  end
 end
