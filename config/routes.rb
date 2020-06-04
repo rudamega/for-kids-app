@@ -7,5 +7,9 @@ Rails.application.routes.draw do
   end
   resources :orders, only: [:index]
   get 'my_orders', to: 'orders#my_orders'
+
+  resources :user, only: [] do
+    get 'user_items', to: 'items#user_items'
+  end
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end
