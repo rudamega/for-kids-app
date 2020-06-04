@@ -1,0 +1,49 @@
+
+<h1 id= "compra-confirmada"></h1>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Order number</th>
+      <th>QTY</th>
+      <th>Item</th>
+      <th>Price</th>
+      <th>Date</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+  <tbody>
+      <tr>
+        <td><%= @orders.last.id %></td>
+        <td><%= 1 %></td>
+        <td><%= @orders.last.item.name%></td>
+        <td><%= @orders.last.item.price%></td>
+        <td><%= @orders.last.created_at%></td>
+      </tr>
+  </tbody>
+</table>
+
+<h1>HISTORICO DE ORDERS</h1>
+<table class="table">
+  <thead>
+    <tr>
+      <th>Order number</th>
+      <th>QTY</th>
+      <th>Item</th>
+      <th>Price</th>
+      <th>Date</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+  <tbody>
+ <%@orders.each do |order| %>
+      <tr>
+        <td><%= order.id %></td>
+        <td><%= 1 %></td>
+        <td><%= order.item.name%></td>
+        <td><%= order.item.price%></td>
+        <td><%= order.created_at%></td>
+      </tr>
+  <%end%>
+  </tbody>
+</table>
