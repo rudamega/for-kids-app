@@ -1,5 +1,6 @@
 <div class="cards">
   <%@items.each do |item| %>
+  <%if item.sold == false%>
   <div class="card-trip">
     <% if item.photo.attached? %>
     <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path item.photo.key%>')">
@@ -24,6 +25,7 @@
       <% end %>
     </div>
   </div>
+  <% end %>
   <% end %>
 </div>
 <%= link_to "Create New items", new_item_path %>

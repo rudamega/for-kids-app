@@ -19,6 +19,8 @@ class OrdersController < ApplicationController
     @order.item = @item
     @order.user = current_user
     @order.status = "SOLD"
+    @item.sold = true
+    @item.save
     @order.save
     redirect_to orders_path
   end
