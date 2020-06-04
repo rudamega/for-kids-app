@@ -1,0 +1,28 @@
+
+<h1>HISTORICO DE ORDERS</h1>
+<table class="table">
+  <thead>
+    <tr>
+      <th>Order number</th>
+      <th>QTY</th>
+      <th>Item</th>
+      <th>Price</th>
+      <th>Date</th>
+      <th>Bought from</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+  <tbody>
+ <%@order.each do |order| %>
+      <tr>
+        <td><%= order.id %></td>
+        <td><%= 1 %></td>
+        <td><%= order.item.name%></td>
+        <td><%= order.item.price%></td>
+        <td><%= order.created_at%></td>
+        <td><%= order.item.user.first_name%></td>
+        <td><%= link_to%></td>
+      </tr>
+  <%end%>
+  </tbody>
+</table>

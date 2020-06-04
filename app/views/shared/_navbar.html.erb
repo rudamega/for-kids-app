@@ -32,7 +32,7 @@
         <%= image_tag "https://res.cloudinary.com/antoniovbraz/image/upload/v1591195259/hwbqzhdzxr46clqy93ppdb9tdkje.jpg", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
         <% end %>
         <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-          <%= link_to "My Orders", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
+          <%= link_to "My Orders", my_orders_path,class: "dropdown-item" %>
           <%= link_to "My Items", items_path, class: "dropdown-item" %>
           <%= link_to "My Profile", items_path, class: "dropdown-item" %>
           <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
