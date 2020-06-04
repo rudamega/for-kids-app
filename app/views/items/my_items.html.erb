@@ -1,0 +1,47 @@
+
+<h1>VENDENDO</h1>
+<%= link_to "Create New items", new_item_path %>
+<table class="table">
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Item</th>
+      <th>Price</th>
+      <th>Date</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+  <tbody>
+ <%@items.where(sold: false).each do |item| %>
+      <tr>
+        <td><%=  link_to item.id, item_path(item.id)%></td>
+        <td><%= item.name%></td>
+        <td><%= item.price%></td>
+        <td><%= item.created_at%></td>
+      </tr>
+  <%end%>
+  </tbody>
+</table>
+
+<h1>VENDIDOS</h1>
+<table class="table">
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Item</th>
+      <th>Price</th>
+      <th>Date</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+  <tbody>
+ <%@items.where(sold: true).each do |item| %>
+      <tr>
+       <td><%=  link_to item.id, item_path(item.id)%></td>
+        <td><%= item.name%></td>
+        <td><%= item.price%></td>
+        <td><%= item.created_at%></td>
+      </tr>
+  <%end%>
+  </tbody>
+</table>
