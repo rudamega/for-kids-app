@@ -1,6 +1,6 @@
 
-<h1>HISTORICO DE ORDERS</h1>
-<table class="table">
+<h1 class="text-center">HISTORICO DE ORDERS</h1>
+<table class="table table-striped table-hover">
   <thead>
     <tr>
       <th>Order number</th>
@@ -9,7 +9,6 @@
       <th>Price</th>
       <th>Date</th>
       <th>Bought from</th>
-      <th colspan="3"></th>
     </tr>
   </thead>
   <tbody>
@@ -20,8 +19,7 @@
         <td><%= order.item.name%></td>
         <td><%= order.item.price%></td>
         <td><%= order.created_at%></td>
-        <td><%= order.item.user.first_name%></td>
-        <td><%= link_to%></td>
+        <td><%= link_to "Ver loja do #{order.item.user.first_name}", user_user_items_path(order.item.user.id)%></td>
       </tr>
   <%end%>
   </tbody>
