@@ -1,0 +1,29 @@
+<table class="table table-sm">
+  <tbody>
+    <tr>
+      <td><%= link_to "Edit my Profile", edit_user_registration_path%></td>
+      <td><%= link_to "Cancel my acount", edit_user_registration_path%></td>
+      <td><%= link_to "Back", :back %></td>
+    </tr>
+    <tr>
+      <th scope="row">Name</th>
+      <td><%= @user.first_name %></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th scope="row">Last Name</th>
+      <td><%= @user.last_name %></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th scope="row">Password</th>
+      <td>****************</td>
+      <td><%= link_to "Change Password", edit_user_registration_path%></td>
+
+    </tr>
+    <tr>
+      <th scope="row">Cadastrado desde</th>
+      <td><%= @user.created_at%></td>
+    </tr>
+  </tbody>
+</table>
