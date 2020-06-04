@@ -1,10 +1,10 @@
 class OrdersController < ApplicationController
   def index
-    @orders = Order.all.where(user: current_user)
+    @orders = Order.where(user: current_user)
   end
 
   def my_orders
-    @order = Order.all.where(user: current_user)
+    @order = Order.where(user: current_user)
   end
 
   def new
