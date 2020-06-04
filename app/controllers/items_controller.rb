@@ -6,6 +6,7 @@ class ItemsController < ApplicationController
 
   def my_items
     @items = Item.where(user: current_user)
+    @orders = Order.all
   end
 
   def show

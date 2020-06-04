@@ -32,6 +32,10 @@
       <th>Item</th>
       <th>Price</th>
       <th>Date</th>
+      <th>buyer</th>
+      <th colspan="3"></th>
+
+
     </tr>
   </thead>
   <tbody>
@@ -41,6 +45,9 @@
         <td><%= item.name%></td>
         <td><%= item.price%></td>
         <td><%= item.created_at%></td>
+        <td><%= item.orders.first.user.first_name%><%= item.orders.first.user.last_name%></td>
+      </tr>
+
   <%end%>
       </tr>
   </tbody>
