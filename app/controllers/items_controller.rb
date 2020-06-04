@@ -13,7 +13,10 @@ class ItemsController < ApplicationController
     @item = Item.find(params[:id])
   end
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> 0b379981b548cd7ab291e16e79630f692236bcce
   def user_items
     @user = User.find(params[:user_id])
     @items = Item.where(user_id: params[:user_id])
