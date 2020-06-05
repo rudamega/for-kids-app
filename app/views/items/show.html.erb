@@ -10,7 +10,10 @@
 <%= link_to 'Back', :back, class: "btn btn-outline-secondary" %>
 <%if current_user == @item.user %>
   <%= link_to 'remove', item_path, method: :delete, data: {confirm: "Are you sure?"}, class: "btn btn-outline-secondary" %>
+<% elsif current_user.credits < @item.price %>
+ <%= link_to 'Not enough credit', pages_path, class: "btn btn-danger" %>
 <% else%>
   <%= link_to 'Buy', new_item_order_path(@item), class: "btn btn-outline-secondary" %>
 <% end %>
+
 
