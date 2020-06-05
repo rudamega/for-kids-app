@@ -7,6 +7,7 @@ require("@rails/ujs").start()
 require("turbolinks").start()
 require("@rails/activestorage").start()
 require("channels")
+require("data-confirm-modal")
 import { initSelect2 } from '../components/init_select2';
 import { loadDynamicInputText } from '../components/input';
 import { loadDynamicInput } from '../components/input-compras';
