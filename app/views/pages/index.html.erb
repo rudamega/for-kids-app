@@ -16,6 +16,12 @@
       <td></td>
     </tr>
     <tr>
+      <th scope="row">Credits</th>
+      <td><%= current_user.credits%> pts.</td>
+      <td><%= link_to "Buy pts.", edit_user_registration_path%></td>
+      <td></td>
+    </tr>
+    <tr>
       <th scope="row">Password</th>
       <td>****************</td>
       <td><%= link_to "Change Password", edit_user_registration_path%></td>
