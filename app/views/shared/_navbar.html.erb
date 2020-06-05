@@ -4,9 +4,11 @@
     <%= link_to root_path, class: "navbar-brand" do %>
     <%= image_tag "https://res.cloudinary.com/ferbocato/image/upload/v1591367885/Logo/White_with_Colorful_Triangles_Internet_Logo_z4kj3a.png", class:"w-30" %>
     <% end %>
-    <form class="form-inline">
-      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-      <button class="btn btn-outline-primary " type="submit">Search</button>
+    <form action="/items" class="form-inline">
+        <input type="text" name="query" class="form-control">
+        <span class="input-group-btn">
+          <input type="Submit" value="Search" class="btn btn-outline-primary">
+        </span>
     </form>
 
   </nav>

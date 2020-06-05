@@ -1,20 +1,17 @@
-#page-container {
+html {
   position: relative;
-  min-height: 100vh;
+  min-height: 100%;
+ }
+
+body {
+margin-bottom: 100px;
 }
 
-#content-wrap {
-  padding-bottom: 2.5rem;    /* Footer height */
-}
-
-#footer {
+footer {
   position: absolute;
   bottom: 0;
   width: 100%;
-  /* Set the fixed height of the footer here */
   height: 60px;
   line-height: 60px; /* Vertically center the text there */
   background-color: #36d1c4;
 }
-/* Sticky footer styles
--------------------------------------------------- */
