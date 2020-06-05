@@ -18,7 +18,7 @@
         <td><%= item.price%></td>
         <td><%= item.created_at%></td>
         <td><%= link_to 'Show', item_path(item.id), class: "btn btn-outline-secondary"%></td>
-        <td><%= link_to 'remove', item_path(item.id), method: :delete, class: "btn btn-outline-secondary" %> </td>
+        <td><%= link_to 'remove', item_path(item.id), method: :delete, data: {confirm: "Are you sure?"}, class: "btn btn-outline-secondary" %> </td>
       </tr>
   <%end%>
   </tbody>

@@ -19,6 +19,10 @@ class OrdersController < ApplicationController
     @order.item = @item
     @order.user = current_user
     @order.status = "SOLD"
+    @order.user.credits -= @item.price
+    @item.user.credits += @item.price
+    @order.user.save
+    @item.user.save
     @item.sold = true
     @item.save
     @order.save

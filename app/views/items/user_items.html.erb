@@ -4,20 +4,14 @@
 </div>
 <div class="cards">
   <%@items.each do |item| %>
-  <div class="card-trip">
-    <% if item.photo.attached? %>
-    <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path item.photo.key%>')">
-    </div>
-    <%else%>
+  <% if !item.sold%>
     <div class="card-trip">
-      <img src="https://images.unsplash.com/photo-1502086223501-7ea6ecd79368?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1446&q=80" />
-    </div>
-    <% end %>
-
-    <div class="card-trip-infos">
-      <div>
-        <%= link_to item.name,item_path(item) %>
-        <p><%= item.description %></p>
+      <% if item.photo.attached? %>
+      <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path item.photo.key%>')">
+      </div>
+      <%else%>
+      <div class="card-trip">
+        <img src="https://images.unsplash.com/photo-1502086223501-7ea6ecd79368?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1446&q=80" />
       </div>
       <h2 class="card-trip-pricing">RS:<%= item.price %> </h2>
       <% if item.user.photo.attached? %>
@@ -25,8 +19,21 @@
       <% else%>
       <%= image_tag "https://res.cloudinary.com/ferbocato/image/upload/v1591369447/user/09_sytksd.jpg", class: "card-trip-user avatar-bordered", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
       <% end %>
+
+      <div class="card-trip-infos">
+        <div>
+          <%= link_to item.name,item_path(item) %>
+          <p><%= item.description %></p>
+        </div>
+        <h2 class="card-trip-pricing">RS:<%= item.price %> </h2>
+        <% if item.user.photo.attached? %>
+        <%= cl_image_tag item.user.photo.key, class: "card-trip-user avatar-bordered", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+        <% else%>
+        <%= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier", class: "card-trip-user avatar-bordered", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+        <% end %>
+      </div>
     </div>
-  </div>
+  <% end %>
   <% end %>
 </div>
 <%= link_to "Back", :back %>

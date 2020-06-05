@@ -8,10 +8,9 @@
 </div>
 
 <%= link_to 'Back', :back, class: "btn btn-outline-secondary" %>
-<%if current_user %>
-  <%= link_to 'remove', item_path, method: :delete, class: "btn btn-outline-secondary" %>
-<% end %>
-<% if current_user != current_user %>
+<%if current_user == @item.user %>
+  <%= link_to 'remove', item_path, method: :delete, data: {confirm: "Are you sure?"}, class: "btn btn-outline-secondary" %>
+<% else%>
   <%= link_to 'Buy', new_item_order_path(@item), class: "btn btn-outline-secondary" %>
 <% end %>
 
