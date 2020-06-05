@@ -1,3 +1,8 @@
+<% if current_user.credits > 0 %>
+<h3 class="text-center" >You have actualy <%= current_user.credits %> pts.</h3>
+<% else %>
+You have no pts.
+<% end %>
 <div class="cards">
   <%@items.each do |item| %>
   <%if item.sold == false%>
