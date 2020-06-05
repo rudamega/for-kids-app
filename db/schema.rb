@@ -71,7 +71,7 @@ ActiveRecord::Schema.define(version: 2020_06_04_142435) do
     t.string "state"
     t.string "country"
     t.string "cpf"
-    t.integer "credits"
+    t.integer "credits", default: 100
     t.string "first_name"
     t.string "last_name"
     t.index ["email"], name: "index_users_on_email", unique: true

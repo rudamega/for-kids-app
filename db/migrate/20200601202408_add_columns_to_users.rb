@@ -6,6 +6,6 @@ class AddColumnsToUsers < ActiveRecord::Migration[6.0]
     add_column :users, :state, :string
     add_column :users, :country, :string
     add_column :users, :cpf, :string
-    add_column :users, :credits, :integer
+    add_column :users, :credits, :integer, default: 100
   end
 end
